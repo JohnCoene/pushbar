@@ -12,9 +12,11 @@ remotes::install_github("JohnCoene/pushbar")
 ## How to use
 
 1. Include `pushbar_deps` anywhere in your ui.
-2. Include `setup_pushbar` in your server function.
+2. Include `setup_pushbar` at the top of your server function.
 3. Use `pushbar` to include content in pushbars. 
 4. Use `pushbar_open` and `pushbar_close` to programatically open and close the pushbars.
+
+Pass your Shiny session to 3) and 4).
 
 ## Example
 
@@ -31,10 +33,13 @@ ui <- fluidPage(
  )
  
  server <- function(input, output, session){
-   setup_pushbar(session)
+
+   setup_pushbar(session) # setup
+
    observeEvent(input$open, {
      pushbar_open(session)
    })  
+
    observeEvent(input$close, {
      pushbar_close(session)
    })  
