@@ -9,6 +9,13 @@ Brings [pushbar.js](https://oncebot.github.io/pushbar.js/) to Shiny.
 remotes::install_github("JohnCoene/pushbar")
 ```
 
+## How to use
+
+1. Include `pushbar_deps` anywhere in your ui.
+2. Include `setup_pushbar` in your server function.
+3. Use `pushbar` to include content in pushbars. 
+4. Use `pushbar_open` and `pushbar_close` to programatically open and close the pushbars.
+
 ## Example
 
 ``` r
