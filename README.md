@@ -22,6 +22,8 @@ Pass your Shiny session to 3) and 4).
 
 ## Example
 
+### [Demo](https://shiny.john-coene.com/pushbar)
+
 ``` r
 library(shiny)
 library(pushbar)
