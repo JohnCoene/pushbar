@@ -1,3 +1,5 @@
+[![Travis build status](https://travis-ci.org/JohnCoene/pushbar.svg?branch=master)](https://travis-ci.org/JohnCoene/pushbar)
+
 # pushbar
 
 Brings [pushbar.js](https://oncebot.github.io/pushbar.js/) to Shiny.
