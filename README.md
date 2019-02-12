@@ -20,6 +20,8 @@ remotes::install_github("JohnCoene/pushbar")
 
 Pass your Shiny session to 3) and 4).
 
+Also includes an event (see example) to capture whether a pushbar is opened.
+
 ## Example
 
 ### [Demo](https://shiny.john-coene.com/pushbar)
@@ -29,25 +31,33 @@ library(shiny)
 library(pushbar)
 
 ui <- fluidPage(
-   pushbar_deps(),
-   actionButton("open", "Open pushbar"),
-   pushbar(
-     h4("HELLO"),
-     actionButton("close", "Close pushbar")
-   )
+  pushbar_deps(),
+  fluidRow(
+    column(6, actionButton("open", "Open pushbar")),
+    column(6, verbatimTextOutput("isOpened"))
+  ),
+  pushbar(
+    id = "myPushbar", # add id to capture event
+    h4("HELLO"),
+    actionButton("close", "Close pushbar")
+  )
  )
  
  server <- function(input, output, session){
 
-   setup_pushbar(session) # setup
+  setup_pushbar(session) # setup
 
-   observeEvent(input$open, {
-     pushbar_open(session)
-   })  
+  observeEvent(input$open, {
+    pushbar_open(session)
+  })  
 
-   observeEvent(input$close, {
-     pushbar_close(session)
-   })  
+  observeEvent(input$close, {
+    pushbar_close(session)
+  })
+
+  output$isOpened <- renderPrint({
+    input$myPushbar_pushbar_opened
+  })  
  }
  
  if(interactive()) shinyApp(ui, server)
