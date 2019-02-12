@@ -30,7 +30,6 @@ ui <- fluidPage(
    pushbar_deps(),
    actionButton("open", "Open pushbar"),
    pushbar(
-     style = "padding:20px;",
      h4("HELLO"),
      actionButton("close", "Close pushbar")
    )

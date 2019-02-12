@@ -10,7 +10,8 @@ pushbar_deps()
 
 setup_pushbar(session, blur = FALSE, overlay = TRUE)
 
-pushbar(..., from = c("left", "right", "top", "bottom"), class = NULL)
+pushbar(..., from = c("left", "right", "top", "bottom"), class = NULL,
+  style = pushbar_style())
 }
 \arguments{
 \item{session}{A valid Shiny session.}
@@ -24,6 +25,8 @@ pushbar(..., from = c("left", "right", "top", "bottom"), class = NULL)
 \item{from}{Wherefrom the pushbar should open.}
 
 \item{class}{Additional class to pass to \code{div}.}
+
+\item{style}{Valid css defaults to \code{\link{pushbar_style}}.}
 }
 \description{
 Set up pushbar.
@@ -31,7 +34,10 @@ Set up pushbar.
 Creates element containing pushbar content.
 }
 \details{
-Creates a \code{div} with id \code{pushbar} + \code{from}, i.e.: \code{pushbarLeft} (default).
+Creates a \code{div}.
+}
+\note{
+You are advised to add \code{padding} inside your pushbar i.e.: \code{style="padding:20px;"}
 }
 \examples{
 library(shiny)

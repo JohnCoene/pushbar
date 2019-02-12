@@ -19,7 +19,7 @@ html.pushbar_locked{
 	overflow-y: auto;
 	transition:transform 0.5s ease;
 	will-change: transform;
-	background:#fff;
+	/*background:#fff;*/
 }
 .pushbar_overlay{
 	z-index: -999;

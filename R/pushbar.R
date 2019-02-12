@@ -66,12 +66,15 @@ setup_pushbar <- function(session, blur = FALSE, overlay = TRUE){
 #' 
 #' @param from Wherefrom the pushbar should open.
 #' @param class Additional class to pass to \code{div}.
+#' @param style Valid css defaults to \code{\link{pushbar_style}}.
 #' @param ... Any other valid \link[shiny]{tags}.
 #' 
-#' @details Creates a \code{div} with id \code{pushbar} + \code{from}, i.e.: \code{pushbarLeft} (default).
+#' @details Creates a \code{div}.
+#' 
+#' @note You are advised to add \code{padding} inside your pushbar i.e.: \code{style="padding:20px;"}
 #' 
 #' @export
-pushbar <- function(..., from = c("left", "right", "top", "bottom"), class = NULL){
+pushbar <- function(..., from = c("left", "right", "top", "bottom"), class = NULL, style = pushbar_style()){
 
   from <- match.arg(from)
 
@@ -81,6 +84,7 @@ pushbar <- function(..., from = c("left", "right", "top", "bottom"), class = NUL
   shiny::div(
     `data-pushbar-id` = id,
     class = cl,
+    style = style,
     ...
   )
 }
@@ -104,4 +108,13 @@ pushbar_open <- function(session, from = c("left", "right", "top", "bottom")){
 #' @export
 pushbar_close <- function(session){
   session$sendCustomMessage("pushbar-close", list())
+}
+
+#' Style
+#'
+#' Default pushbar CSS, used in \code{\link{pushbar}}.
+#' 
+#' @export
+pushbar_style <- function(){
+  "background:#fff;padding:20px;"
 }
