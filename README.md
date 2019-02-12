@@ -22,11 +22,13 @@ Pass your Shiny session to 3) and 4).
 
 ``` r
 library(shiny)
+library(pushbar)
 
 ui <- fluidPage(
    pushbar_deps(),
    actionButton("open", "Open pushbar"),
    pushbar(
+     style = "padding:20px;",
      h4("HELLO"),
      actionButton("close", "Close pushbar")
    )
