@@ -1,5 +1,4 @@
 ^\.travis\.yml$
 ^LICENSE\.md$
 test.R
-.git-attributes
 .gitattributes
