@@ -17,12 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   triggers = document.querySelectorAll(`[data-pushbar-id]`);
 
-  console.log(triggers);
-
   [].forEach.call(triggers, function(el) {
-
-    console.log(el);
-    console.log(el.id);
 
     // set true
     el.addEventListener('pushbar_opening', function(e){
