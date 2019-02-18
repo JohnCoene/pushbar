@@ -10,8 +10,8 @@ pushbar_deps()
 
 setup_pushbar(session, blur = FALSE, overlay = TRUE)
 
-pushbar(..., from = c("left", "right", "top", "bottom"), class = NULL,
-  style = pushbar_style())
+pushbar(..., id = from, from = c("left", "right", "top", "bottom"),
+  class = NULL, style = pushbar_style())
 }
 \arguments{
 \item{session}{A valid Shiny session.}
@@ -21,6 +21,8 @@ pushbar(..., from = c("left", "right", "top", "bottom"), class = NULL,
 \item{overlay}{Whether to darken the background when pushbar is opened.}
 
 \item{...}{Any other valid \link[shiny]{tags}.}
+
+\item{id}{Id of pushbar.}
 
 \item{from}{Wherefrom the pushbar should open.}
 

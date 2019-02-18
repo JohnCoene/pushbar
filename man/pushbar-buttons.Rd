@@ -6,14 +6,14 @@
 \alias{pushbar_close}
 \title{Pushbar Buttons}
 \usage{
-pushbar_open(session, from = c("left", "right", "top", "bottom"))
+pushbar_open(session, id = c("left", "right", "top", "bottom"))
 
 pushbar_close(session)
 }
 \arguments{
 \item{session}{A valid Shiny session.}
 
-\item{from}{The pushbar side to open.}
+\item{id}{Id of pushbar to open.}
 }
 \description{
 Open and close pushbar programatically.

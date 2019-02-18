@@ -63,7 +63,8 @@ setup_pushbar <- function(session, blur = FALSE, overlay = TRUE){
 #' Pushbar
 #' 
 #' Creates element containing pushbar content.
-#' 
+#'
+#' @param id Id of pushbar. 
 #' @param from Wherefrom the pushbar should open.
 #' @param class Additional class to pass to \code{div}.
 #' @param style Valid css defaults to \code{\link{pushbar_style}}.
@@ -93,7 +94,7 @@ pushbar <- function(..., id = from, from = c("left", "right", "top", "bottom"), 
 #' 
 #' Open and close pushbar programatically.
 #' 
-#' @param from The pushbar side to open.
+#' @param id Id of pushbar to open. 
 #' @param session A valid Shiny session.
 #' 
 #' @name pushbar-buttons
