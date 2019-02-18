@@ -74,14 +74,14 @@ setup_pushbar <- function(session, blur = FALSE, overlay = TRUE){
 #' @note You are advised to add \code{padding} inside your pushbar i.e.: \code{style="padding:20px;"}
 #' 
 #' @export
-pushbar <- function(..., from = c("left", "right", "top", "bottom"), class = NULL, style = pushbar_style()){
+pushbar <- function(..., id = from, from = c("left", "right", "top", "bottom"), class = NULL, style = pushbar_style()){
 
   from <- match.arg(from)
 
   cl <- paste0("pushbar from_", from, " ", class)
-  id <- .make_id(from)
 
   shiny::div(
+    id = id,
     `data-pushbar-id` = id,
     class = cl,
     style = style,
@@ -98,10 +98,8 @@ pushbar <- function(..., from = c("left", "right", "top", "bottom"), class = NUL
 #' 
 #' @name pushbar-buttons
 #' @export
-pushbar_open <- function(session, from = c("left", "right", "top", "bottom")){
-  from <- match.arg(from)
-  id <- .make_id(from)
-  session$sendCustomMessage("pushbar-open", id)
+pushbar_open <- function(session, id = c("left", "right", "top", "bottom")){
+  session$sendCustomMessage("pushbar-open", id[1])
 }
 
 #' @rdname pushbar-buttons
