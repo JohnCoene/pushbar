@@ -4,7 +4,6 @@
 #'
 #' @param blur Whether to blur the background when pushbar is opened.
 #' @param overlay Whether to darken the background when pushbar is opened.
-#' @param session A valid Shiny session.
 #' 
 #' @examples
 #' library(shiny)
@@ -52,11 +51,13 @@ pushbar_deps <- function() {
 
 #' @rdname pushbar
 #' @export
-setup_pushbar <- function(session, blur = FALSE, overlay = TRUE){
+setup_pushbar <- function(blur = FALSE, overlay = TRUE){
   opts <- list(
     blur = blur,
     overlay = overlay
   )
+  session <- shiny::getDefaultReactiveDomain()
+  .check_session(session)
   session$sendCustomMessage("pushbar-setup", opts)
 }
 
@@ -95,17 +96,19 @@ pushbar <- function(..., id = from, from = c("left", "right", "top", "bottom"), 
 #' Open and close pushbar programatically.
 #' 
 #' @param id Id of pushbar to open. 
-#' @param session A valid Shiny session.
 #' 
 #' @name pushbar-buttons
 #' @export
-pushbar_open <- function(session, id = c("left", "right", "top", "bottom")){
+pushbar_open <- function(id = c("left", "right", "top", "bottom")){
+  session <- shiny::getDefaultReactiveDomain()
+  .check_session(session)
   session$sendCustomMessage("pushbar-open", id[1])
 }
 
 #' @rdname pushbar-buttons
 #' @export
-pushbar_close <- function(session){
+pushbar_close <- function(){
+  session <- shiny::getDefaultReactiveDomain()
   session$sendCustomMessage("pushbar-close", list())
 }
 
@@ -116,4 +119,9 @@ pushbar_close <- function(session){
 #' @export
 pushbar_style <- function(){
   "background:#fff;padding:20px;"
+}
+
+.check_session <- function(x){
+  if(is.null(x))
+    stop("invalid session, run this function inside your Shiny server.")
 }

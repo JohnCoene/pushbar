@@ -1,6 +1,6 @@
 Package: pushbar
 Title: 'pushbar.js' for 'Shiny'
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: 
     person(given = "John",
            family = "Coene",

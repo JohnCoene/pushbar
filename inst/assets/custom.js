@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // set true
     el.addEventListener('pushbar_opening', function(e){
-      Shiny.onInputChange(el.id + "_pushbar_opened:pushbarParse", true);
+      Shiny.onInputChange(el.id + "_pushbar_opened:pushbarParse", true, {priority: "event"});
     });
 
     // set false
     el.addEventListener('pushbar_closing', function(e){
-      Shiny.onInputChange(el.id + "_pushbar_opened:pushbarParse", false);
+      Shiny.onInputChange(el.id + "_pushbar_opened:pushbarParse", false, {priority: "event"});
     });
 
   });

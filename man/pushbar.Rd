@@ -8,14 +8,12 @@
 \usage{
 pushbar_deps()
 
-setup_pushbar(session, blur = FALSE, overlay = TRUE)
+setup_pushbar(blur = FALSE, overlay = TRUE)
 
 pushbar(..., id = from, from = c("left", "right", "top", "bottom"),
   class = NULL, style = pushbar_style())
 }
 \arguments{
-\item{session}{A valid Shiny session.}
-
 \item{blur}{Whether to blur the background when pushbar is opened.}
 
 \item{overlay}{Whether to darken the background when pushbar is opened.}

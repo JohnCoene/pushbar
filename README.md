@@ -6,10 +6,16 @@ Brings [pushbar.js](https://oncebot.github.io/pushbar.js/) to Shiny.
 
 ## Installation
 
+Install with `remotes`
+
 ``` r
 # install.packages("remotes")
 remotes::install_github("JohnCoene/pushbar")
 ```
+
+## Update 
+
+In version `0.1.0` and up there is no need to explicitely pass session to various functions, see example.
 
 ## How to use
 
@@ -17,8 +23,6 @@ remotes::install_github("JohnCoene/pushbar")
 2. Include `setup_pushbar` at the top of your server function.
 3. Use `pushbar` to include content in pushbars. 
 4. Use `pushbar_open` and `pushbar_close` to programatically open and close the pushbars.
-
-Pass your Shiny session to 3) and 4).
 
 Also includes an event (see example) to capture whether a pushbar is opened.
 
@@ -35,7 +39,7 @@ ui <- fluidPage(
    actionButton("open", "Open pushbar"),
    pushbar(
      h4("HELLO"),
-     id = "myPushbar",
+     id = "myPushbar", # add id to get event
      actionButton("close", "Close pushbar")
    ),
    fluidRow(
@@ -46,14 +50,14 @@ ui <- fluidPage(
  
  server <- function(input, output, session){
 
-   setup_pushbar(session) # setup
+   setup_pushbar() # setup
 
    observeEvent(input$open, {
-     pushbar_open(session, id = "myPushbar")
+     pushbar_open(id = "myPushbar")
    })  
 
    observeEvent(input$close, {
-     pushbar_close(session)
+     pushbar_close()
    })  
 
    output$ev <- renderPrint({
