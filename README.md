@@ -36,6 +36,7 @@ library(pushbar)
 
 ui <- fluidPage(
    pushbar_deps(),
+	 br(),
    actionButton("open", "Open pushbar"),
    pushbar(
      h4("HELLO"),
@@ -44,7 +45,7 @@ ui <- fluidPage(
    ),
    fluidRow(
      column(5),
-     column(5, verbatimTextOutput("ev"))
+     column(5, span("Is a pushbar opened?"), verbatimTextOutput("ev"))
    )
  )
  

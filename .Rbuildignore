@@ -1,4 +1,7 @@
+^CRAN-RELEASE$
+^cran-comments\.md$
 ^\.travis\.yml$
 ^LICENSE\.md$
 test.R
 .gitattributes
+pushbar.gif

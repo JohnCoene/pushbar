@@ -1,12 +1,13 @@
 Package: pushbar
-Title: 'pushbar.js' for 'Shiny'
+Title: Create Sliders for Shiny
 Version: 0.1.0
+Date: 2019-03-09
 Authors@R: 
     person(given = "John",
            family = "Coene",
            role = c("aut", "cre"),
            email = "jcoenep@gmail.com")
-Description: Create push bars from left, right, top and bottom.
+Description: Create pushbars from left, right, top and bottom which may include any html or 'Shiny' input or output.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
