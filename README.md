@@ -26,11 +26,11 @@ In version `0.1.0` and up there is no need to explicitely pass session to variou
 3. Use `pushbar` to include content in pushbars. 
 4. Use `pushbar_open` and `pushbar_close` to programatically open and close the pushbars.
 
-Also includes an event (see example) to capture whether a pushbar is opened.
+Also includes an event (see example) to capture whether a pushbar is opened (`input$pushbarID_pushbar_opened`).
 
 ## Example
 
-### [Demo](https://shiny.john-coene.com/pushbar)
+[Live Demo](https://shiny.john-coene.com/pushbar)
 
 ``` r
 library(shiny)
