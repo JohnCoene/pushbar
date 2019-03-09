@@ -4,6 +4,8 @@
 
 Brings [pushbar.js](https://oncebot.github.io/pushbar.js/) to Shiny.
 
+![](pushbar.gif)
+
 ## Installation
 
 Install with `remotes`
