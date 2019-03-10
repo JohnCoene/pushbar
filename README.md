@@ -2,6 +2,8 @@
 
 # pushbar
 
+<img src="man/figures/logo.png" align = "left" style = "max-height:150px;" />
+
 Brings [pushbar.js](https://oncebot.github.io/pushbar.js/) to Shiny.
 
 ![](pushbar.gif)
@@ -14,10 +16,6 @@ Install with `remotes`
 # install.packages("remotes")
 remotes::install_github("JohnCoene/pushbar")
 ```
-
-## Update 
-
-In version `0.1.0` and up there is no need to explicitely pass session to various functions, see example.
 
 ## How to use
 
