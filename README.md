@@ -4,7 +4,7 @@
 
 # pushbar
 
-Brings [pushbar.js](https://oncebot.github.io/pushbar.js/) to Shiny.
+Brings [pushbar.js](https://oncebot.github.io/pushbar.js/) to Shiny; create off-canvas sliders for inputs, outputs or any other content.
 
 ## Installation
 
