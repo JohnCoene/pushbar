@@ -1,8 +1,8 @@
 [![Travis build status](https://travis-ci.org/JohnCoene/pushbar.svg?branch=master)](https://travis-ci.org/JohnCoene/pushbar)
 
-# pushbar
-
 <img src="man/figures/logo.png" align = "right" height = "170px" />
+
+# pushbar
 
 Brings [pushbar.js](https://oncebot.github.io/pushbar.js/) to Shiny.
 
