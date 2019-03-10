@@ -2,7 +2,7 @@
 
 # pushbar
 
-<img src="man/figures/logo.png" align = "left" style = "max-height:150px;" />
+<img src="man/figures/logo.png" align = "left" height = "150px" />
 
 Brings [pushbar.js](https://oncebot.github.io/pushbar.js/) to Shiny.
 
