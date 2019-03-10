@@ -2,11 +2,9 @@
 
 # pushbar
 
-<img src="man/figures/logo.png" align = "left" height = "150px" />
+<img src="man/figures/logo.png" align = "right" height = "170px" />
 
 Brings [pushbar.js](https://oncebot.github.io/pushbar.js/) to Shiny.
-
-![](pushbar.gif)
 
 ## Installation
 
@@ -68,4 +66,6 @@ ui <- fluidPage(
  
  if(interactive()) shinyApp(ui, server)
 ```
+
+![](pushbar.gif)
 
