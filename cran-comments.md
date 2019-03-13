@@ -7,4 +7,8 @@
 
 0 errors | 0 warnings | 1 note
 
-* New submission.
+* This is a new release (re-submission).
+
+> Thanks, please write package names, software names and API names in single quotes (e.g. 'shiny') in Title and Description.
+
+Apologies for the mistake, it's fixed now.
