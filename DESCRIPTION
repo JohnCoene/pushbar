@@ -7,7 +7,7 @@ Authors@R:
            family = "Coene",
            role = c("aut", "cre"),
            email = "jcoenep@gmail.com")
-Description: Create pushbars from left, right, top and bottom which may include any html or 'Shiny' input or output.
+Description: Create sliders from left, right, top and bottom which may include any html or 'Shiny' input or output.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
