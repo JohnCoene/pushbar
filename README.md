@@ -8,7 +8,13 @@ Brings [pushbar.js](https://oncebot.github.io/pushbar.js/) to Shiny; create off-
 
 ## Installation
 
-Install with `remotes`
+Install the stable version (recommended) from CRAN:
+
+```r
+install.packages("pushbar")
+```
+
+Install the development version with `remotes`
 
 ``` r
 # install.packages("remotes")
