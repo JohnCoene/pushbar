@@ -46,7 +46,7 @@ ui <- fluidPage(
       tags$a(
         icon("code", class = "fa-3x"),
         target = "_blank",
-        href = "https://github.com/JohnCoene/waiter"
+        href = "https://github.com/JohnCoene/pushbar"
       ),
       br(),
       br(),
