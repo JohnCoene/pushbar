@@ -52,7 +52,7 @@ ui <- fluidPage(
       br(),
       br(),
       code(
-        "install.packages('waiter')"
+        "install.packages('pushbar')"
       )
     ),
     pushbar(
