@@ -1,7 +1,7 @@
 Package: pushbar
 Title: Create Sliders for 'Shiny'
 Version: 0.1.0
-Date: 2019-03-13
+Date: 2019-07-13
 Authors@R: 
     person(given = "John",
            family = "Coene",
