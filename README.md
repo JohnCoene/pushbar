@@ -40,7 +40,7 @@ library(pushbar)
 
 ui <- fluidPage(
    pushbar_deps(),
-	 br(),
+   br(),
    actionButton("open", "Open pushbar"),
    pushbar(
      h4("HELLO"),
