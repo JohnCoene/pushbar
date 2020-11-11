@@ -8,15 +8,22 @@
 \usage{
 pushbar_deps()
 
-setup_pushbar(blur = FALSE, overlay = TRUE)
+setup_pushbar(blur = FALSE, overlay = TRUE, esc_close = TRUE)
 
-pushbar(..., id = from, from = c("left", "right", "top", "bottom"),
-  class = NULL, style = pushbar_style())
+pushbar(
+  ...,
+  id = from,
+  from = c("left", "right", "top", "bottom"),
+  class = NULL,
+  style = pushbar_style()
+)
 }
 \arguments{
 \item{blur}{Whether to blur the background when pushbar is opened.}
 
 \item{overlay}{Whether to darken the background when pushbar is opened.}
+
+\item{esc_close}{Whether to enable pressing `ESC` key to close the pushbar}
 
 \item{...}{Any other valid \link[shiny]{tags}.}
 
@@ -53,10 +60,10 @@ ui <- fluidPage(
 server <- function(input, output, session){
 
   setup_pushbar()
- 
+
   observeEvent(input$open, {
     pushbar_open()
-  })  
+  })
 }
 
 if(interactive()) shinyApp(ui, server)

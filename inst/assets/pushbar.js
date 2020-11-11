@@ -1,5 +1,5 @@
 class Pushbar {
-  constructor(config = { overlay: true, blur: false }) {
+  constructor(config = { overlay: true, blur: false, esc: true }) {
     this.activeBar = null;
     this.overlay = false;
 
@@ -16,14 +16,14 @@ class Pushbar {
       }
     }
 
-    this.bindEvents();
+    this.bindEvents(config);
   }
 
   get opened() {
     const { activeBar } = this;
     return Boolean(activeBar instanceof HTMLElement && activeBar.classList.contains('opened'));
   }
-  
+
   get activeBarId() {
     const { activeBar } = this;
     return activeBar instanceof HTMLElement && activeBar.getAttribute('data-pushbar-id');
@@ -62,7 +62,7 @@ class Pushbar {
     }
   }
 
-  bindEvents() {
+  bindEvents(config) {
     const triggers = document.querySelectorAll('[data-pushbar-target]');
     const closers = document.querySelectorAll('[data-pushbar-close]');
 
@@ -72,7 +72,9 @@ class Pushbar {
     if (this.overlay) {
       this.overlay.addEventListener('click', e => this.handleCloseEvent(e), false);
     }
-    document.addEventListener('keyup', e => this.handleKeyEvent(e));
+    if (config.esc) {
+      document.addEventListener('keyup', e => this.handleKeyEvent(e));
+    }
   }
 
   open(pushbarId) {
@@ -80,17 +82,17 @@ class Pushbar {
     if (String(pushbarId) === this.activeBarId && this.opened) {
       return;
     }
-    
+
     // Get new pushbar target
     const pushbar = Pushbar.findElementById(pushbarId);
 
     if (!pushbar) return;
-    
+
     // Close active bar (if exists)
     if (this.opened) {
       this.close();
     }
-    
+
     Pushbar.dispatchOpen(pushbar);
     pushbar.classList.add('opened');
 
@@ -103,14 +105,14 @@ class Pushbar {
   close() {
     const { activeBar } = this;
     if (!activeBar) return;
-    
+
     Pushbar.dispatchClose(activeBar);
     activeBar.classList.remove('opened');
 
     const Root = document.querySelector('html');
     Root.classList.remove('pushbar_locked');
     Root.removeAttribute('pushbar');
-    
+
     this.activeBar = null;
   }
 }
