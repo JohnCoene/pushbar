@@ -4,7 +4,7 @@
 #'
 #' @param blur Whether to blur the background when pushbar is opened.
 #' @param overlay Whether to darken the background when pushbar is opened.
-#' 
+#' @param esc_close Whether to enable pressing `ESC` key to close the pushbar
 #' @examples
 #' library(shiny)
 #'
@@ -15,18 +15,18 @@
 #'     h4("HELLO")
 #'   )
 #' )
-#' 
+#'
 #' server <- function(input, output, session){
 #'
 #'   setup_pushbar()
-#'  
+#'
 #'   observeEvent(input$open, {
 #'     pushbar_open()
-#'   })  
+#'   })
 #' }
-#' 
+#'
 #' if(interactive()) shinyApp(ui, server)
-#' 
+#'
 #' @importFrom shiny tags
 #' @name pushbar
 #' @export
@@ -51,10 +51,11 @@ pushbar_deps <- function() {
 
 #' @rdname pushbar
 #' @export
-setup_pushbar <- function(blur = FALSE, overlay = TRUE){
+setup_pushbar <- function(blur = FALSE, overlay = TRUE, esc_close = TRUE){
   opts <- list(
     blur = blur,
-    overlay = overlay
+    overlay = overlay,
+    esc = esc_close
   )
   session <- shiny::getDefaultReactiveDomain()
   .check_session(session)
@@ -62,19 +63,19 @@ setup_pushbar <- function(blur = FALSE, overlay = TRUE){
 }
 
 #' Pushbar
-#' 
+#'
 #' Creates element containing pushbar content.
 #'
-#' @param id Id of pushbar. 
+#' @param id Id of pushbar.
 #' @param from Wherefrom the pushbar should open.
 #' @param class Additional class to pass to \code{div}.
 #' @param style Valid css defaults to \code{\link{pushbar_style}}.
 #' @param ... Any other valid \link[shiny]{tags}.
-#' 
+#'
 #' @details Creates a \code{div}.
-#' 
+#'
 #' @note You are advised to add \code{padding} inside your pushbar i.e.: \code{style="padding:20px;"}
-#' 
+#'
 #' @export
 pushbar <- function(..., id = from, from = c("left", "right", "top", "bottom"), class = NULL, style = pushbar_style()){
 
@@ -92,11 +93,11 @@ pushbar <- function(..., id = from, from = c("left", "right", "top", "bottom"), 
 }
 
 #' Pushbar Buttons
-#' 
+#'
 #' Open and close pushbar programatically.
-#' 
-#' @param id Id of pushbar to open. 
-#' 
+#'
+#' @param id Id of pushbar to open.
+#'
 #' @name pushbar-buttons
 #' @export
 pushbar_open <- function(id = c("left", "right", "top", "bottom")){
@@ -115,7 +116,7 @@ pushbar_close <- function(){
 #' Style
 #'
 #' Default pushbar CSS, used in \code{\link{pushbar}}.
-#' 
+#'
 #' @export
 pushbar_style <- function(){
   "background:#fff;padding:20px;"

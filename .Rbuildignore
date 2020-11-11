@@ -6,3 +6,5 @@ test.R
 .gitattributes
 pushbar.gif
 docs
+^.*\.Rproj$
+^\.Rproj\.user$
