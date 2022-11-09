@@ -4,6 +4,8 @@
 
 # pushbar
 
+> See [bsutils](github.com/JohnCoene/bsutils) for a Bootstrap 5 built-in.
+
 Brings [pushbar.js](https://oncebot.github.io/pushbar.js/) to Shiny; create off-canvas sliders for inputs, outputs or any other content.
 
 ## Installation
